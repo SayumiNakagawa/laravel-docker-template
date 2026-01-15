@@ -11,7 +11,46 @@
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div id="app">
+ <div id="app">
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="/todo">ToDo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto"></ul>
+          <ul class="navbar-nav ml-auto"></ul>
+        </div>
+      </div>
+    </nav>
+    <main class="py-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">
+                ToDo一覧
+              </div>
+              <div class="list-group list-group-flush">
+                @foreach ($todos as $todo)
+                  <div class="d-flex align-items-center p-2">
+                    <span class="col-9">{{ $todo->content }}</span>
+                  </div>
+                @endforeach
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>
+    </main>
+  </div>
+</body>
+
+
+
+<!-- 以下元データ　上記Section10コピペ -->
+  <!-- <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
       <div class="container">
         <a class="navbar-brand" href="/todo">ToDo</a>
@@ -40,5 +79,5 @@
      </div>
     </main>
   </div>
-</body>
+</body> -->
 </html>
