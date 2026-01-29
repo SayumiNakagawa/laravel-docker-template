@@ -27,11 +27,11 @@ class TodoController extends Controller
     {
         // $content = $request->input('content');
         $inputs = $request->all();
-        dd($inputs);
+        // dd($inputs);
 
         $todo = new Todo();
 
-        $todo->content = $inputs['content'];
+        $todo->fill($inputs);
 
         $todo->save();
 
